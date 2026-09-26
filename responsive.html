@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Responsive Website Project</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7ff;
+            color: #222;
+        }
+
+        nav {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        nav h2 {
+            color: #667eea;
+        }
+
+        .hero {
+            min-height: 65vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 20px;
+            line-height: 1.7;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 28px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .section > p {
+            color: #666;
+            font-size: 18px;
+        }
+
+        .devices {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 45px;
+        }
+
+        .device {
+            background: white;
+            padding: 35px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .device .icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .device h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .device p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 700px) {
+            .devices {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>Responsive Web Design</h2>
+    </nav>
+
+    <section class="hero">
+        <div>
+            <h1>📱 Responsive Website</h1>
+
+            <p>
+                A modern responsive website that
+                adapts smoothly to phones, tablets
+                and desktop computers.
+            </p>
+
+            <a href="index.html" class="button">
+                ← Back to Portfolio
+            </a>
+        </div>
+    </section>
+
+    <section class="section">
+
+        <h2>Works Everywhere</h2>
+
+        <p>
+            One website designed for every screen size.
+        </p>
+
+        <div class="devices">
+
+            <div class="device">
+                <div class="icon">📱</div>
+                <h3>Mobile</h3>
+                <p>
+                    Clean and easy-to-use design
+                    for smartphone users.
+                </p>
+            </div>
+
+            <div class="device">
+                <div class="icon">📲</div>
+                <h3>Tablet</h3>
+                <p>
+                    Flexible layouts that look great
+                    on tablet screens.
+                </p>
+            </div>
+
+            <div class="device">
+                <div class="icon">💻</div>
+                <h3>Desktop</h3>
+                <p>
+                    Professional layouts optimized
+                    for larger screens.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Responsive Website. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

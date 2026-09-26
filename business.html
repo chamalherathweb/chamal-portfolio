@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Business Website Project</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7ff;
+            color: #222;
+        }
+
+        nav {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        nav h2 {
+            color: #667eea;
+        }
+
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 20px;
+            line-height: 1.7;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 28px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .section > p {
+            color: #666;
+            font-size: 18px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 45px;
+        }
+
+        .card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            font-size: 23px;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 700px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>Modern Business</h2>
+    </nav>
+
+    <section class="hero">
+        <div>
+            <h1>Grow Your Business 🚀</h1>
+
+            <p>
+                We create modern digital solutions
+                that help businesses build a strong
+                online presence.
+            </p>
+
+            <a href="index.html" class="button">
+                ← Back to Portfolio
+            </a>
+        </div>
+    </section>
+
+    <section class="section">
+
+        <h2>Our Services</h2>
+
+        <p>
+            Professional solutions designed for modern businesses.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>🌐 Web Design</h3>
+                <p>
+                    Modern and professional websites
+                    designed to represent your business online.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>📱 Responsive Design</h3>
+                <p>
+                    Websites that look great on phones,
+                    tablets and computers.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🚀 Digital Solutions</h3>
+                <p>
+                    Clean and modern digital solutions
+                    designed to help your business grow.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Modern Business. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
