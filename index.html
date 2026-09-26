@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,61 +16,64 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: #f5f7ff;
+            background: #f5f7fb;
             color: #222;
             line-height: 1.6;
         }
 
-        nav {
+        header {
             position: sticky;
             top: 0;
             z-index: 1000;
+            background: #111827;
+            padding: 15px 8%;
+        }
+
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 8%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
         }
 
-        nav h2 {
-            color: #667eea;
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
         }
 
         nav ul {
             display: flex;
-            gap: 25px;
             list-style: none;
+            gap: 25px;
         }
 
         nav ul li a {
+            color: white;
             text-decoration: none;
-            color: #333;
             font-weight: bold;
-            transition: 0.3s;
         }
 
         nav ul li a:hover {
-            color: #667eea;
+            color: #60a5fa;
+        }
+
+        section {
+            padding: 80px 8%;
         }
 
         .hero {
             min-height: 90vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #111827, #2563eb);
             color: white;
         }
 
         .hero h1 {
-            font-size: 52px;
+            font-size: 50px;
             margin-bottom: 15px;
-            animation: fadeUp 1s ease;
         }
 
         .hero h2 {
@@ -81,147 +83,93 @@
 
         .hero p {
             max-width: 650px;
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-
-        .hero-button {
-            display: inline-block;
-            padding: 14px 30px;
-            background: white;
-            color: #667eea;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 17px;
-            transition: 0.3s;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .hero-button:hover {
-            transform: translateY(-4px);
-        }
-
-        section {
-            padding: 80px 8%;
-            text-align: center;
-        }
-
-        section h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .section-text {
-            max-width: 750px;
             margin: auto;
-            color: #666;
+            font-size: 18px;
         }
 
-        .about-box {
-            max-width: 850px;
-            margin: 35px auto 0;
+        .hero-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 28px;
             background: white;
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            color: #2563eb;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        .hero-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
+
+        .about {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
         }
 
         .skills,
-        .services {
+        .services,
+        .projects {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
-            margin-top: 40px;
         }
 
-        .skill,
-        .service {
+        .card {
             background: white;
             padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             transition: 0.3s;
         }
 
-        .skill:hover,
-        .service:hover {
+        .card:hover {
             transform: translateY(-8px);
         }
 
-        .skill h3,
-        .service h3 {
-            font-size: 22px;
+        .card h3 {
             margin-bottom: 10px;
         }
 
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-top: 45px;
-        }
-
-        .project {
-            background: white;
-            border-radius: 20px;
+        .project-card {
             overflow: hidden;
-            text-align: left;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: 0.3s;
         }
 
-        .project:hover {
-            transform: translateY(-8px);
-        }
-
-        .project-image {
+        .project-card img {
             width: 100%;
-            height: 210px;
+            height: 180px;
             object-fit: cover;
-            display: block;
+            border-radius: 10px;
+            margin-bottom: 15px;
         }
 
-        .project-content {
-            padding: 25px;
-        }
-
-        .project h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .project p {
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .project-button {
+        .project-btn {
             display: inline-block;
+            margin-top: 15px;
             padding: 10px 20px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: #2563eb;
             color: white;
             text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .project-button:hover {
-            transform: translateY(-3px);
-        }
-
-        .contact-box {
-            max-width: 700px;
-            margin: 40px auto 0;
-            background: white;
-            padding: 35px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-container {
+            max-width: 700px;
+            margin: auto;
         }
 
         .contact-info {
-            margin-bottom: 25px;
+            text-align: center;
+            margin-bottom: 30px;
         }
 
         .contact-info p {
@@ -229,48 +177,45 @@
         }
 
         form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
         }
 
         input,
         textarea {
             width: 100%;
-            padding: 14px;
+            padding: 13px;
+            margin-bottom: 15px;
             border: 1px solid #ddd;
-            border-radius: 10px;
+            border-radius: 8px;
             font-size: 16px;
-            outline: none;
-        }
-
-        input:focus,
-        textarea:focus {
-            border-color: #667eea;
         }
 
         textarea {
-            min-height: 150px;
+            height: 150px;
             resize: vertical;
         }
 
         button {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 14px 30px;
+            width: 100%;
+            padding: 14px;
             border: none;
-            border-radius: 50px;
-            font-size: 17px;
+            background: #2563eb;
+            color: white;
+            border-radius: 8px;
+            font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-            transition: 0.3s;
         }
 
         button:hover {
-            transform: translateY(-3px);
+            background: #1d4ed8;
         }
 
         #form-message {
+            text-align: center;
             margin-top: 15px;
             font-weight: bold;
         }
@@ -279,43 +224,23 @@
             display: flex;
             justify-content: center;
             gap: 15px;
+            margin-top: 25px;
             flex-wrap: wrap;
-            margin-top: 30px;
         }
 
         .social-links a {
             text-decoration: none;
-            padding: 12px 20px;
-            border-radius: 30px;
-            background: #f1f3f8;
-            color: #333;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .social-links a:hover {
-            transform: translateY(-3px);
-            background: #667eea;
+            padding: 10px 18px;
+            border-radius: 25px;
+            background: #111827;
             color: white;
         }
 
         footer {
+            background: #111827;
+            color: white;
             text-align: center;
             padding: 25px;
-            background: #111;
-            color: white;
-        }
-
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         @media (max-width: 768px) {
@@ -332,7 +257,7 @@
             }
 
             .hero h1 {
-                font-size: 38px;
+                font-size: 36px;
             }
 
             .hero h2 {
@@ -346,7 +271,7 @@
             }
 
             section {
-                padding: 60px 5%;
+                padding: 60px 6%;
             }
         }
     </style>
@@ -354,11 +279,9 @@
 
 <body>
 
-    <!-- NAVIGATION -->
-
+<header>
     <nav>
-
-        <h2>Chamal Herath</h2>
+        <div class="logo">Chamal Herath</div>
 
         <ul>
             <li><a href="#home">Home</a></li>
@@ -368,14 +291,12 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-
     </nav>
+</header>
 
 
-    <!-- HERO -->
-
-    <section class="hero" id="home">
-
+<section id="home" class="hero">
+    <div>
         <h1>Hi, I'm Chamal Herath 👋</h1>
 
         <h2>Web Designer & Developer</h2>
@@ -385,365 +306,12 @@
             for businesses and personal brands.
         </p>
 
-        <a href="#contact" class="hero-button">
-            Contact Me
-        </a>
+        <a href="#contact" class="hero-btn">Contact Me</a>
+    </div>
+</section>
 
-    </section>
 
+<section id="about">
+    <h2 class="section-title">About Me</h2>
 
-    <!-- ABOUT -->
-
-    <section id="about">
-
-        <h2>About Me 👨‍💻</h2>
-
-        <p class="section-text">
-            I'm Chamal, a beginner web designer and developer
-            passionate about creating clean, modern and responsive websites.
-        </p>
-
-        <div class="about-box">
-
-            <p>
-                I focus on building websites that look professional,
-                work smoothly on different devices and provide a simple
-                experience for visitors.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- SKILLS -->
-
-    <section id="skills">
-
-        <h2>My Skills 🛠️</h2>
-
-        <div class="skills">
-
-            <div class="skill">
-                <h3>HTML</h3>
-                <p>Creating clean and well-structured web pages.</p>
-            </div>
-
-            <div class="skill">
-                <h3>CSS</h3>
-                <p>Designing modern layouts, animations and responsive websites.</p>
-            </div>
-
-            <div class="skill">
-                <h3>JavaScript</h3>
-                <p>Adding interactive features and website functionality.</p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SERVICES -->
-
-    <section id="services">
-
-        <h2>My Services 🚀</h2>
-
-        <div class="services">
-
-            <div class="service">
-                <h3>🌐 Website Design</h3>
-                <p>Modern websites designed to match your brand.</p>
-            </div>
-
-            <div class="service">
-                <h3>📱 Responsive Design</h3>
-                <p>Websites that work smoothly on mobile, tablet and desktop.</p>
-            </div>
-
-            <div class="service">
-                <h3>🏢 Business Websites</h3>
-                <p>Professional websites for businesses and entrepreneurs.</p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PROJECTS -->
-
-    <section id="projects">
-
-        <h2>My Projects 💼</h2>
-
-        <p class="section-text">
-            Here are some website concepts and projects I have created.
-        </p>
-
-        <div class="projects">
-
-
-            <!-- BUSINESS WEBSITE -->
-
-            <div class="project">
-
-                <img
-                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
-                    class="project-image"
-                    alt="Business Website">
-
-                <div class="project-content">
-
-                    <h3>🏢 Business Website</h3>
-
-                    <p>
-                        A clean and professional website concept
-                        for a modern business.
-                    </p>
-
-                    <a href="business.html" class="project-button">
-                        View Project
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- ONLINE STORE -->
-
-            <div class="project">
-
-                <img
-                    src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80"
-                    class="project-image"
-                    alt="Online Store">
-
-                <div class="project-content">
-
-                    <h3>🛍️ Online Store</h3>
-
-                    <p>
-                        A modern online store concept designed
-                        for selling products.
-                    </p>
-
-                    <a href="store.html" class="project-button">
-                        View Project
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- PORTFOLIO WEBSITE -->
-
-            <div class="project">
-
-                <img
-                    src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=800&q=80"
-                    class="project-image"
-                    alt="Portfolio Website">
-
-                <div class="project-content">
-
-                    <h3>💻 Portfolio Website</h3>
-
-                    <p>
-                        A personal portfolio website for showcasing
-                        skills and projects.
-                    </p>
-
-                    <a href="portfolio.html" class="project-button">
-                        View Project
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- RESPONSIVE WEBSITE -->
-
-            <div class="project">
-
-                <img
-                    src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80"
-                    class="project-image"
-                    alt="Responsive Website">
-
-                <div class="project-content">
-
-                    <h3>📱 Responsive Website</h3>
-
-                    <p>
-                        A responsive website designed to work smoothly
-                        across different screen sizes.
-                    </p>
-
-                    <a href="responsive.html" class="project-button">
-                        View Project
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <section id="contact">
-
-        <h2>Contact Me 📩</h2>
-
-        <p class="section-text">
-            Have a project in mind? Send me a message.
-        </p>
-
-        <div class="contact-box">
-
-            <div class="contact-info">
-
-                <p>📧 Email: nadeezherarh@gmail.com</p>
-
-                <p>📱 Phone: +94 712205560</p>
-
-            </div>
-
-
-            <!-- CONTACT FORM -->
-
-            <form
-                id="contact-form"
-                action="https://formspree.io/f/mbglaekv"
-                method="POST">
-
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    required>
-
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Your Email"
-                    required>
-
-                <textarea
-                    name="message"
-                    placeholder="Your Message"
-                    required></textarea>
-
-                <button type="submit">
-                    Send Message
-                </button>
-
-            </form>
-
-
-            <div id="form-message"></div>
-
-
-            <!-- SOCIAL LINKS -->
-
-            <div class="social-links">
-
-                <a href="https://www.instagram.com/_im_nadeiz_/" target="_blank"></a>
-                    📷 Instagram
-                </a>
-
-                <a href="https://wa.me/94712205560" target="_blank">
-                    💬 WhatsApp
-                </a>
-
-               
-                    <a href="https://www.instagram.com/_im_nadeiz_/" target="_blank">
-    📸 Instagram
-</a>
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <p>
-            © 2026 Chamal Herath. All Rights Reserved.
-        </p>
-
-    </footer>
-
-
-    <!-- JAVASCRIPT -->
-
-    <script>
-
-        const form = document.getElementById("contact-form");
-
-        const formMessage = document.getElementById("form-message");
-
-
-        form.addEventListener("submit", async function (event) {
-
-            event.preventDefault();
-
-            formMessage.innerHTML = "Sending...";
-
-
-            try {
-
-                const response = await fetch(form.action, {
-
-                    method: "POST",
-
-                    body: new FormData(form),
-
-                    headers: {
-                        "Accept": "application/json"
-                    }
-
-                });
-
-
-                if (response.ok) {
-
-                    formMessage.innerHTML =
-                        "✅ Message sent successfully!";
-
-                    form.reset();
-
-                } else {
-
-                    formMessage.innerHTML =
-                        "❌ Something went wrong. Please try again.";
-
-                }
-
-            } catch (error) {
-
-                formMessage.innerHTML =
-                    "❌ Something went wrong. Please try again.";
-
-            }
-
-        });
-
-    </script>
-
-</body>
-
-</html>
+    <
