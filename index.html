@@ -22,15 +22,17 @@
         position: sticky;
         top: 0;
         z-index: 1000;
-        background: rgba(255,255,255,0.95);
+
+        background: rgba(255,255,255,0.96);
         backdrop-filter: blur(10px);
-        box-shadow: 0 2px 15px rgba(0,0,0,0.08);
 
         display: flex;
         justify-content: space-between;
         align-items: center;
 
         padding: 18px 8%;
+
+        box-shadow: 0 2px 15px rgba(0,0,0,0.08);
     }
 
     .logo {
@@ -43,7 +45,7 @@
         text-decoration: none;
         color: #111827;
         font-weight: 600;
-        margin-left: 22px;
+        margin-left: 20px;
     }
 
     nav a:hover {
@@ -63,8 +65,8 @@
 
         background:
             linear-gradient(
-                rgba(15,23,42,0.78),
-                rgba(15,23,42,0.78)
+                rgba(15,23,42,0.80),
+                rgba(15,23,42,0.80)
             ),
             url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80")
             center/cover;
@@ -113,7 +115,16 @@
 
     .btn:hover {
         background: #1d4ed8;
-        transform: translateY(-2px);
+        transform: translateY(-3px);
+    }
+
+    .btn.secondary {
+        background: #ffffff;
+        color: #1d4ed8;
+    }
+
+    .btn.secondary:hover {
+        background: #dbeafe;
     }
 
     section {
@@ -139,13 +150,16 @@
     .skills-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+
         gap: 20px;
+
         max-width: 1000px;
         margin: auto;
     }
 
     .skill {
         background: white;
+
         padding: 30px 20px;
 
         text-align: center;
@@ -166,9 +180,14 @@
         margin-bottom: 8px;
     }
 
+    .skill p {
+        color: #6b7280;
+    }
+
     .services-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+
         gap: 25px;
     }
 
@@ -211,6 +230,7 @@
     .projects-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+
         gap: 25px;
     }
 
@@ -269,6 +289,7 @@
     .contact {
         background: #111827;
         color: white;
+
         text-align: center;
     }
 
@@ -290,6 +311,31 @@
         text-decoration: none;
     }
 
+    .social-links {
+        margin-top: 20px;
+    }
+
+    .social-links a {
+        display: inline-block;
+
+        color: white;
+        text-decoration: none;
+
+        margin: 5px;
+
+        padding: 10px 16px;
+
+        border-radius: 7px;
+
+        background: #1f2937;
+
+        transition: 0.3s;
+    }
+
+    .social-links a:hover {
+        background: #2563eb;
+    }
+
     .contact-form {
         max-width: 650px;
         margin: auto;
@@ -307,6 +353,13 @@
         border-radius: 8px;
 
         font-size: 16px;
+
+        outline: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        box-shadow: 0 0 0 3px #60a5fa;
     }
 
     .contact-form textarea {
@@ -327,6 +380,7 @@
 
     footer {
         background: #020617;
+
         color: #cbd5e1;
 
         text-align: center;
@@ -334,27 +388,8 @@
         padding: 25px;
     }
 
-    .social-links {
-        margin-top: 20px;
-    }
-
-    .social-links a {
-        display: inline-block;
-
-        color: white;
-        text-decoration: none;
-
+    footer p {
         margin: 5px;
-
-        padding: 10px 16px;
-
-        border-radius: 7px;
-
-        background: #1f2937;
-    }
-
-    .social-links a:hover {
-        background: #2563eb;
     }
 
     @media (max-width: 900px) {
@@ -397,6 +432,10 @@
         .hero p {
             font-size: 17px;
         }
+
+        .section-title {
+            font-size: 32px;
+        }
     }
 </style>
 
@@ -426,21 +465,29 @@
 
     <div class="hero-content">
 
-        <h1>Hi, I'm Chamal Herath 👋</h1>
+        <h1>
+            Hi, I'm Chamal Herath 👋
+        </h1>
 
-        <h2>Web Designer & Developer</h2>
+        <h2>
+            Web Designer & Developer
+        </h2>
 
         <p>
             I create modern, responsive and professional websites
             for businesses, brands and individuals.
         </p>
 
-        <a href="#projects" class="btn">
+        <a
+            href="#projects"
+            class="btn">
             View My Work
         </a>
 
-        <a href="#contact" class="btn">
-            Contact Me
+        <a
+            href="#contact"
+            class="btn secondary">
+            Hire Me
         </a>
 
     </div>
@@ -459,7 +506,7 @@
     <div class="about">
 
         <p>
-            Hello! I'm Chamal Herath, a beginner web designer and developer
+            Hello! I'm Chamal Herath, a web designer and developer
             focused on creating clean, modern and responsive websites.
         </p>
 
@@ -474,9 +521,8 @@
         <br>
 
         <p>
-            I'm continuously learning HTML, CSS, JavaScript and
-            modern web development techniques to build better websites
-            for clients around the world.
+            I'm continuously improving my skills in HTML, CSS,
+            JavaScript and modern web development.
         </p>
 
     </div>
@@ -501,7 +547,7 @@
 
         <div class="skill">
             <h3>CSS3</h3>
-            <p>Responsive & modern design</p>
+            <p>Modern & responsive design</p>
         </div>
 
         <div class="skill">
@@ -516,22 +562,22 @@
 
         <div class="skill">
             <h3>VS Code</h3>
-            <p>Professional development workflow</p>
+            <p>Website development workflow</p>
         </div>
 
         <div class="skill">
             <h3>GitHub</h3>
-            <p>Website hosting & version control</p>
+            <p>Hosting & version control</p>
         </div>
 
         <div class="skill">
             <h3>UI Design</h3>
-            <p>Clean and user-friendly interfaces</p>
+            <p>Clean user interfaces</p>
         </div>
 
         <div class="skill">
             <h3>Web Design</h3>
-            <p>Modern business websites</p>
+            <p>Professional business websites</p>
         </div>
 
     </div>
@@ -549,16 +595,19 @@
 
     <div class="services-grid">
 
+
         <div class="service">
 
             <div class="icon">
                 🌐
             </div>
 
-            <h3>Business Websites</h3>
+            <h3>
+                Business Websites
+            </h3>
 
             <p>
-                Professional websites for small businesses,
+                Professional websites for businesses,
                 companies and personal brands.
             </p>
 
@@ -571,11 +620,13 @@
                 🛒
             </div>
 
-            <h3>Online Stores</h3>
+            <h3>
+                Online Stores
+            </h3>
 
             <p>
-                Modern online store designs for products
-                and small businesses.
+                Modern online store designs for
+                products and businesses.
             </p>
 
         </div>
@@ -587,7 +638,9 @@
                 📱
             </div>
 
-            <h3>Responsive Design</h3>
+            <h3>
+                Responsive Design
+            </h3>
 
             <p>
                 Websites that look great on phones,
@@ -595,6 +648,7 @@
             </p>
 
         </div>
+
 
     </div>
 
@@ -612,7 +666,7 @@
     <div class="projects-grid">
 
 
-        <!-- PROJECT 1 -->
+        <!-- BUSINESS -->
 
         <div class="project">
 
@@ -627,14 +681,15 @@
                 </h3>
 
                 <p>
-                    A clean and professional business website
-                    designed for modern companies.
+                    A clean and professional business
+                    website for modern companies.
                 </p>
 
                 <a
                     href="business.html"
                     class="project-link"
-                    target="_blank">
+                    target="_blank"
+                    rel="noopener noreferrer">
                     View Project →
                 </a>
 
@@ -643,7 +698,7 @@
         </div>
 
 
-        <!-- PROJECT 2 -->
+        <!-- STORE -->
 
         <div class="project">
 
@@ -665,7 +720,8 @@
                 <a
                     href="store.html"
                     class="project-link"
-                    target="_blank">
+                    target="_blank"
+                    rel="noopener noreferrer">
                     View Project →
                 </a>
 
@@ -674,7 +730,7 @@
         </div>
 
 
-        <!-- PROJECT 3 -->
+        <!-- PORTFOLIO -->
 
         <div class="project">
 
@@ -696,7 +752,8 @@
                 <a
                     href="portfolio.html"
                     class="project-link"
-                    target="_blank">
+                    target="_blank"
+                    rel="noopener noreferrer">
                     View Project →
                 </a>
 
@@ -705,7 +762,7 @@
         </div>
 
 
-        <!-- PROJECT 4 -->
+        <!-- RESPONSIVE -->
 
         <div class="project">
 
@@ -727,7 +784,8 @@
                 <a
                     href="responsive.html"
                     class="project-link"
-                    target="_blank">
+                    target="_blank"
+                    rel="noopener noreferrer">
                     View Project →
                 </a>
 
@@ -736,7 +794,7 @@
         </div>
 
 
-        <!-- PROJECT 5 -->
+        <!-- RESTAURANT -->
 
         <div class="project">
 
@@ -758,7 +816,8 @@
                 <a
                     href="restaurant.html"
                     class="project-link"
-                    target="_blank">
+                    target="_blank"
+                    rel="noopener noreferrer">
                     View Project →
                 </a>
 
@@ -796,6 +855,7 @@
                 nadeezherarh@gmail.com
             </a>
         </p>
+
 
         <div class="social-links">
 
@@ -875,7 +935,8 @@
 
 <script>
 
-    const form = document.getElementById("contact-form");
+    const form =
+        document.getElementById("contact-form");
 
     const formMessage =
         document.getElementById("form-message");
@@ -890,6 +951,7 @@
             formMessage.innerHTML =
                 "Sending...";
 
+
             try {
 
                 const response =
@@ -897,7 +959,10 @@
                         form.action,
                         {
                             method: "POST",
-                            body: new FormData(form),
+
+                            body:
+                                new FormData(form),
+
                             headers: {
                                 "Accept":
                                     "application/json"
