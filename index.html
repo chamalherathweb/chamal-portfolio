@@ -1,603 +1,420 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Chamal Herath | Web Designer & Developer</title>
 
-    <meta name="description" content="Chamal Herath - Web Designer & Developer">
-    <meta name="author" content="Chamal Herath">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
 
-    <title>Chamal Herath | Web Designer & Developer</title>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f8fafc;
+        color: #111827;
+        line-height: 1.6;
+    }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(255,255,255,0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 18px 8%;
+    }
+
+    .logo {
+        font-size: 25px;
+        font-weight: bold;
+        color: #2563eb;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #111827;
+        font-weight: 600;
+        margin-left: 22px;
+    }
+
+    nav a:hover {
+        color: #2563eb;
+    }
+
+    .hero {
+        min-height: 90vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+
+        padding: 60px 20px;
+
+        background:
+            linear-gradient(
+                rgba(15,23,42,0.78),
+                rgba(15,23,42,0.78)
+            ),
+            url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80")
+            center/cover;
+
+        color: white;
+    }
+
+    .hero-content {
+        max-width: 850px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 7vw, 75px);
+        margin-bottom: 15px;
+    }
+
+    .hero h2 {
+        font-size: clamp(22px, 4vw, 34px);
+        color: #60a5fa;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 19px;
+        color: #e5e7eb;
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        display: inline-block;
+
+        background: #2563eb;
+        color: white;
+
+        text-decoration: none;
+
+        padding: 13px 25px;
+        margin: 5px;
+
+        border-radius: 8px;
+
+        font-weight: bold;
+
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #1d4ed8;
+        transform: translateY(-2px);
+    }
+
+    section {
+        padding: 90px 8%;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 45px;
+    }
+
+    .about {
+        max-width: 850px;
+        margin: auto;
+
+        text-align: center;
+
+        font-size: 18px;
+        color: #4b5563;
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    .skill {
+        background: white;
+        padding: 30px 20px;
+
+        text-align: center;
+
+        border-radius: 15px;
+
+        box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+
+        transition: 0.3s;
+    }
+
+    .skill:hover {
+        transform: translateY(-7px);
+    }
+
+    .skill h3 {
+        color: #2563eb;
+        margin-bottom: 8px;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .service {
+        background: white;
+
+        padding: 35px 25px;
+
+        text-align: center;
+
+        border-radius: 15px;
+
+        box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+
+        transition: 0.3s;
+    }
+
+    .service:hover {
+        transform: translateY(-7px);
+    }
+
+    .service .icon {
+        font-size: 45px;
+        margin-bottom: 15px;
+    }
+
+    .service h3 {
+        margin-bottom: 10px;
+        font-size: 23px;
+    }
+
+    .service p {
+        color: #6b7280;
+    }
+
+    .projects {
+        background: #eef2ff;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .project {
+        background: white;
+
+        border-radius: 15px;
+
+        overflow: hidden;
+
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
+        transition: 0.3s;
+    }
+
+    .project:hover {
+        transform: translateY(-8px);
+    }
+
+    .project-image {
+        height: 210px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 60px;
+
+        background: #dbeafe;
+    }
+
+    .project-content {
+        padding: 25px;
+    }
+
+    .project-content h3 {
+        font-size: 23px;
+        margin-bottom: 8px;
+    }
+
+    .project-content p {
+        color: #6b7280;
+        margin-bottom: 15px;
+    }
+
+    .project-link {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .project-link:hover {
+        text-decoration: underline;
+    }
+
+    .contact {
+        background: #111827;
+        color: white;
+        text-align: center;
+    }
+
+    .contact .section-title {
+        color: white;
+    }
+
+    .contact-info {
+        margin-bottom: 35px;
+    }
+
+    .contact-info p {
+        margin: 10px 0;
+        font-size: 17px;
+    }
+
+    .contact-info a {
+        color: #93c5fd;
+        text-decoration: none;
+    }
+
+    .contact-form {
+        max-width: 650px;
+        margin: auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+
+        padding: 14px;
+
+        margin-bottom: 15px;
+
+        border: none;
+        border-radius: 8px;
+
+        font-size: 16px;
+    }
+
+    .contact-form textarea {
+        min-height: 150px;
+        resize: vertical;
+    }
+
+    .contact-form button {
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    #form-message {
+        margin-top: 18px;
+        font-weight: bold;
+    }
+
+    footer {
+        background: #020617;
+        color: #cbd5e1;
+
+        text-align: center;
+
+        padding: 25px;
+    }
+
+    .social-links {
+        margin-top: 20px;
+    }
+
+    .social-links a {
+        display: inline-block;
+
+        color: white;
+        text-decoration: none;
+
+        margin: 5px;
+
+        padding: 10px 16px;
+
+        border-radius: 7px;
+
+        background: #1f2937;
+    }
+
+    .social-links a:hover {
+        background: #2563eb;
+    }
+
+    @media (max-width: 900px) {
+
+        .skills-grid {
+            grid-template-columns: repeat(2, 1fr);
         }
 
-        :root {
-            --bg: #f5f7fb;
-            --card: #ffffff;
-            --text: #111827;
-            --muted: #6b7280;
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --dark: #0f172a;
-            --border: #e5e7eb;
+        .services-grid {
+            grid-template-columns: 1fr;
         }
 
-        body.dark {
-            --bg: #020617;
-            --card: #0f172a;
-            --text: #f8fafc;
-            --muted: #94a3b8;
-            --border: #1e293b;
+        .projects-grid {
+            grid-template-columns: 1fr;
         }
+    }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            transition: 0.3s;
-        }
-
-        /* NAVBAR */
+    @media (max-width: 650px) {
 
         header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(12px);
-            padding: 15px 7%;
+            padding: 15px 5%;
         }
 
         nav {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            color: white;
-            font-size: 24px;
-            font-weight: 800;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 22px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #60a5fa;
-        }
-
-        .menu-btn {
             display: none;
-            color: white;
-            font-size: 28px;
-            cursor: pointer;
         }
 
-        .theme-btn {
-            border: 0;
-            background: transparent;
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
+        section {
+            padding: 65px 6%;
         }
 
-        /* HERO */
+        .skills-grid {
+            grid-template-columns: 1fr;
+        }
 
         .hero {
-            min-height: 92vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 60px 7%;
-            color: white;
-
-            background:
-                radial-gradient(circle at 20% 20%, #3b82f6, transparent 30%),
-                radial-gradient(circle at 80% 80%, #7c3aed, transparent 30%),
-                linear-gradient(135deg, #020617, #1d4ed8);
-        }
-
-        .hero-content {
-            max-width: 850px;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            padding: 8px 16px;
-            border: 1px solid rgba(255,255,255,0.25);
-            border-radius: 30px;
-            margin-bottom: 20px;
-            background: rgba(255,255,255,0.08);
-        }
-
-        .hero h1 {
-            font-size: clamp(40px, 7vw, 70px);
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: #93c5fd;
-        }
-
-        .hero h2 {
-            font-size: clamp(22px, 4vw, 32px);
-            margin-bottom: 20px;
-            color: #dbeafe;
+            min-height: 80vh;
         }
 
         .hero p {
-            max-width: 700px;
-            margin: auto;
-            color: #e5e7eb;
-            font-size: 18px;
+            font-size: 17px;
         }
+    }
+</style>
 
-        .hero-buttons {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 13px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .btn-primary {
-            background: white;
-            color: #2563eb;
-        }
-
-        .btn-secondary {
-            color: white;
-            border: 1px solid rgba(255,255,255,0.4);
-            background: rgba(255,255,255,0.08);
-        }
-
-        .btn:hover {
-            transform: translateY(-4px);
-        }
-
-        /* GENERAL */
-
-        section {
-            padding: 90px 7%;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 38px;
-            margin-bottom: 15px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            max-width: 650px;
-            margin: 0 auto 50px;
-            color: var(--muted);
-        }
-
-        /* ABOUT */
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 35px;
-            align-items: center;
-        }
-
-        .about-box {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 35px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-        }
-
-        .about-box p {
-            color: var(--muted);
-            margin-bottom: 15px;
-        }
-
-        .info-list {
-            list-style: none;
-        }
-
-        .info-list li {
-            margin: 12px 0;
-            color: var(--muted);
-        }
-
-        .info-list strong {
-            color: var(--text);
-        }
-
-        /* SKILLS */
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .skill-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            padding: 30px;
-            border-radius: 18px;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .skill-icon {
-            font-size: 45px;
-            margin-bottom: 15px;
-        }
-
-        .skill-card h3 {
-            margin-bottom: 8px;
-        }
-
-        .skill-card p {
-            color: var(--muted);
-        }
-
-        /* SERVICES */
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .service-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            padding: 35px;
-            border-radius: 18px;
-            transition: 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .service-icon {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
-
-        .service-card h3 {
-            margin-bottom: 10px;
-        }
-
-        .service-card p {
-            color: var(--muted);
-        }
-
-        /* PROJECTS */
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .project-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 30px;
-            transition: 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .project-number {
-            font-size: 14px;
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        .project-card h3 {
-            font-size: 25px;
-            margin: 10px 0;
-        }
-
-        .project-card p {
-            color: var(--muted);
-        }
-
-        .project-tags {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin: 18px 0;
-        }
-
-        .tag {
-            padding: 6px 12px;
-            border-radius: 20px;
-            background: rgba(37,99,235,0.1);
-            color: var(--primary);
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .project-link {
-            display: inline-block;
-            text-decoration: none;
-            color: white;
-            background: var(--primary);
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-        }
-
-        /* CONTACT */
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 0.8fr 1.2fr;
-            gap: 30px;
-        }
-
-        .contact-card,
-        form {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 35px;
-        }
-
-        .contact-card p {
-            margin: 15px 0;
-            color: var(--muted);
-        }
-
-        .contact-card a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        input,
-        textarea {
-            width: 100%;
-            padding: 14px;
-            margin-bottom: 15px;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            background: var(--bg);
-            color: var(--text);
-            font-size: 16px;
-            outline: none;
-        }
-
-        textarea {
-            min-height: 160px;
-            resize: vertical;
-        }
-
-        input:focus,
-        textarea:focus {
-            border-color: var(--primary);
-        }
-
-        .submit-btn {
-            width: 100%;
-            border: none;
-            padding: 14px;
-            background: var(--primary);
-            color: white;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .submit-btn:hover {
-            background: var(--primary-dark);
-        }
-
-        #form-message {
-            text-align: center;
-            margin-top: 15px;
-            font-weight: bold;
-        }
-
-        /* SOCIAL */
-
-        .social-links {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-top: 25px;
-        }
-
-        .social-links a {
-            padding: 10px 16px;
-            border-radius: 25px;
-            text-decoration: none;
-            background: var(--dark);
-            color: white;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .social-links a:hover {
-            transform: translateY(-3px);
-        }
-
-        /* FOOTER */
-
-        footer {
-            background: #020617;
-            color: white;
-            text-align: center;
-            padding: 30px 7%;
-        }
-
-        footer p {
-            color: #94a3b8;
-        }
-
-        /* BACK TO TOP */
-
-        #topBtn {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            width: 45px;
-            height: 45px;
-            border: none;
-            border-radius: 50%;
-            background: var(--primary);
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-            display: none;
-            z-index: 999;
-        }
-
-        /* ANIMATION */
-
-        .fade-up {
-            animation: fadeUp 1s ease;
-        }
-
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(25px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 800px) {
-
-            .menu-btn {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 65px;
-                left: 0;
-                width: 100%;
-                padding: 20px;
-                background: #0f172a;
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .about-grid,
-            .contact-grid,
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-grid,
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 65px 6%;
-            }
-
-            .hero {
-                min-height: 85vh;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-
-<!-- NAVIGATION -->
+</head><body><!-- HEADER -->
 
 <header>
 
+    <div class="logo">
+        Chamal.dev
+    </div>
+
     <nav>
-
-        <div class="logo">
-            Chamal Herath
-        </div>
-
-        <div class="menu-btn" onclick="toggleMenu()">
-            ☰
-        </div>
-
-        <ul class="nav-links" id="navLinks">
-
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-
-            <li>
-                <button class="theme-btn" onclick="toggleTheme()">
-                    🌙
-                </button>
-            </li>
-
-        </ul>
-
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
     </nav>
 
 </header>
@@ -605,38 +422,26 @@
 
 <!-- HERO -->
 
-<section id="home" class="hero">
+<section class="hero" id="home">
 
-    <div class="hero-content fade-up">
+    <div class="hero-content">
 
-        <div class="hero-badge">
-            Available for Website Projects 🚀
-        </div>
+        <h1>Hi, I'm Chamal Herath 👋</h1>
 
-        <h1>
-            Hi, I'm <span>Chamal Herath</span> 👋
-        </h1>
-
-        <h2>
-            Web Designer & Developer
-        </h2>
+        <h2>Web Designer & Developer</h2>
 
         <p>
             I create modern, responsive and professional websites
-            for businesses, personal brands and online projects.
+            for businesses, brands and individuals.
         </p>
 
-        <div class="hero-buttons">
+        <a href="#projects" class="btn">
+            View My Work
+        </a>
 
-            <a href="#contact" class="btn btn-primary">
-                Contact Me
-            </a>
-
-            <a href="#projects" class="btn btn-secondary">
-                View My Work
-            </a>
-
-        </div>
+        <a href="#contact" class="btn">
+            Contact Me
+        </a>
 
     </div>
 
@@ -647,78 +452,32 @@
 
 <section id="about">
 
-    <div class="container">
+    <h2 class="section-title">
+        About Me
+    </h2>
 
-        <h2 class="section-title">
-            About Me
-        </h2>
+    <div class="about">
 
-        <p class="section-subtitle">
-            A passionate beginner web designer focused on creating
-            clean and modern websites.
+        <p>
+            Hello! I'm Chamal Herath, a beginner web designer and developer
+            focused on creating clean, modern and responsive websites.
         </p>
 
+        <br>
 
-        <div class="about-grid">
+        <p>
+            I enjoy turning ideas into simple, beautiful and
+            user-friendly websites that work across phones,
+            tablets and computers.
+        </p>
 
-            <div class="about-box">
+        <br>
 
-                <h3>
-                    Who I Am
-                </h3>
-
-                <br>
-
-                <p>
-                    I'm Chamal Herath, a Web Designer & Developer
-                    passionate about creating modern and responsive
-                    websites.
-                </p>
-
-                <p>
-                    I enjoy turning ideas into simple, beautiful
-                    and user-friendly websites that work across
-                    phones, tablets and computers.
-                </p>
-
-            </div>
-
-
-            <div class="about-box">
-
-                <h3>
-                    Quick Information
-                </h3>
-
-                <br>
-
-                <ul class="info-list">
-
-                    <li>
-                        👤 <strong>Name:</strong>
-                        Chamal Herath
-                    </li>
-
-                    <li>
-                        💻 <strong>Role:</strong>
-                        Web Designer & Developer
-                    </li>
-
-                    <li>
-                        📧 <strong>Email:</strong>
-                        nadeezherarh@gmail.com
-                    </li>
-
-                    <li>
-                        📞 <strong>Phone:</strong>
-                        +94 71 220 5560
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
+        <p>
+            I'm continuously learning HTML, CSS, JavaScript and
+            modern web development techniques to build better websites
+            for clients around the world.
+        </p>
 
     </div>
 
@@ -729,71 +488,50 @@
 
 <section id="skills">
 
-    <div class="container">
+    <h2 class="section-title">
+        My Skills
+    </h2>
 
-        <h2 class="section-title">
-            My Skills
-        </h2>
+    <div class="skills-grid">
 
-        <p class="section-subtitle">
-            Technologies and tools I use to build websites.
-        </p>
+        <div class="skill">
+            <h3>HTML5</h3>
+            <p>Modern website structure</p>
+        </div>
 
+        <div class="skill">
+            <h3>CSS3</h3>
+            <p>Responsive & modern design</p>
+        </div>
 
-        <div class="skills-grid">
+        <div class="skill">
+            <h3>JavaScript</h3>
+            <p>Interactive website features</p>
+        </div>
 
+        <div class="skill">
+            <h3>Responsive Design</h3>
+            <p>Mobile, tablet & desktop</p>
+        </div>
 
-            <div class="skill-card">
+        <div class="skill">
+            <h3>VS Code</h3>
+            <p>Professional development workflow</p>
+        </div>
 
-                <div class="skill-icon">
-                    🌐
-                </div>
+        <div class="skill">
+            <h3>GitHub</h3>
+            <p>Website hosting & version control</p>
+        </div>
 
-                <h3>
-                    HTML
-                </h3>
+        <div class="skill">
+            <h3>UI Design</h3>
+            <p>Clean and user-friendly interfaces</p>
+        </div>
 
-                <p>
-                    Building clean and structured web pages.
-                </p>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <div class="skill-icon">
-                    🎨
-                </div>
-
-                <h3>
-                    CSS
-                </h3>
-
-                <p>
-                    Creating modern layouts and responsive designs.
-                </p>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <div class="skill-icon">
-                    ⚡
-                </div>
-
-                <h3>
-                    JavaScript
-                </h3>
-
-                <p>
-                    Adding interactive features and functionality.
-                </p>
-
-            </div>
-
-
+        <div class="skill">
+            <h3>Web Design</h3>
+            <p>Modern business websites</p>
         </div>
 
     </div>
@@ -805,73 +543,56 @@
 
 <section id="services">
 
-    <div class="container">
+    <h2 class="section-title">
+        My Services
+    </h2>
 
-        <h2 class="section-title">
-            My Services
-        </h2>
+    <div class="services-grid">
 
-        <p class="section-subtitle">
-            Website services for businesses, creators and personal brands.
-        </p>
+        <div class="service">
 
-
-        <div class="services-grid">
-
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    🌐
-                </div>
-
-                <h3>
-                    Website Design
-                </h3>
-
-                <p>
-                    Modern and professional websites designed
-                    to present your business or personal brand online.
-                </p>
-
+            <div class="icon">
+                🌐
             </div>
 
+            <h3>Business Websites</h3>
 
-            <div class="service-card">
+            <p>
+                Professional websites for small businesses,
+                companies and personal brands.
+            </p>
 
-                <div class="service-icon">
-                    📱
-                </div>
+        </div>
 
-                <h3>
-                    Responsive Design
-                </h3>
 
-                <p>
-                    Websites that work smoothly on mobile,
-                    tablet and desktop devices.
-                </p>
+        <div class="service">
 
+            <div class="icon">
+                🛒
             </div>
 
+            <h3>Online Stores</h3>
 
-            <div class="service-card">
+            <p>
+                Modern online store designs for products
+                and small businesses.
+            </p>
 
-                <div class="service-icon">
-                    💼
-                </div>
+        </div>
 
-                <h3>
-                    Business Websites
-                </h3>
 
-                <p>
-                    Professional websites for companies,
-                    small businesses and services.
-                </p>
+        <div class="service">
 
+            <div class="icon">
+                📱
             </div>
 
+            <h3>Responsive Design</h3>
+
+            <p>
+                Websites that look great on phones,
+                tablets and computers.
+            </p>
 
         </div>
 
@@ -882,147 +603,169 @@
 
 <!-- PROJECTS -->
 
-<section id="projects">
+<section class="projects" id="projects">
 
-    <div class="container">
+    <h2 class="section-title">
+        My Projects
+    </h2>
 
-        <h2 class="section-title">
-            My Projects
-        </h2>
-
-        <p class="section-subtitle">
-            Some website concepts and projects created for my portfolio.
-        </p>
+    <div class="projects-grid">
 
 
-        <div class="projects-grid">
+        <!-- PROJECT 1 -->
 
+        <div class="project">
 
-            <div class="project-card">
+            <div class="project-image">
+                🏢
+            </div>
 
-                <div class="project-number">
-                    PROJECT 01
-                </div>
+            <div class="project-content">
 
                 <h3>
-                    🚀 Modern Business
+                    Modern Business
                 </h3>
 
                 <p>
-                    A professional business website concept
-                    designed to showcase company services.
+                    A clean and professional business website
+                    designed for modern companies.
                 </p>
-
-                <div class="project-tags">
-                    <span class="tag">HTML</span>
-                    <span class="tag">CSS</span>
-                    <span class="tag">Responsive</span>
-                </div>
 
                 <a
                     href="business.html"
                     class="project-link"
-                >
+                    target="_blank">
                     View Project →
                 </a>
 
             </div>
 
+        </div>
 
-            <div class="project-card">
 
-                <div class="project-number">
-                    PROJECT 02
-                </div>
+        <!-- PROJECT 2 -->
+
+        <div class="project">
+
+            <div class="project-image">
+                🛍️
+            </div>
+
+            <div class="project-content">
 
                 <h3>
-                    🛍️ Online Store
+                    Online Store
                 </h3>
 
                 <p>
-                    A modern online store concept with
-                    product sections and clean design.
+                    A modern online store design with
+                    attractive product sections.
                 </p>
-
-                <div class="project-tags">
-                    <span class="tag">HTML</span>
-                    <span class="tag">CSS</span>
-                    <span class="tag">UI Design</span>
-                </div>
 
                 <a
                     href="store.html"
                     class="project-link"
-                >
+                    target="_blank">
                     View Project →
                 </a>
 
             </div>
 
+        </div>
 
-            <div class="project-card">
 
-                <div class="project-number">
-                    PROJECT 03
-                </div>
+        <!-- PROJECT 3 -->
+
+        <div class="project">
+
+            <div class="project-image">
+                💻
+            </div>
+
+            <div class="project-content">
 
                 <h3>
-                    💻 Personal Portfolio
+                    Personal Portfolio
                 </h3>
 
                 <p>
-                    A clean portfolio concept for showcasing
-                    skills, services and projects.
+                    A professional portfolio website
+                    for showcasing skills and projects.
                 </p>
-
-                <div class="project-tags">
-                    <span class="tag">HTML</span>
-                    <span class="tag">CSS</span>
-                    <span class="tag">Portfolio</span>
-                </div>
 
                 <a
                     href="portfolio.html"
                     class="project-link"
-                >
+                    target="_blank">
                     View Project →
                 </a>
 
             </div>
 
+        </div>
 
-            <div class="project-card">
 
-                <div class="project-number">
-                    PROJECT 04
-                </div>
+        <!-- PROJECT 4 -->
+
+        <div class="project">
+
+            <div class="project-image">
+                📱
+            </div>
+
+            <div class="project-content">
 
                 <h3>
-                    📱 Responsive Website
+                    Responsive Website
                 </h3>
 
                 <p>
-                    A responsive website concept designed
-                    for mobile, tablet and desktop screens.
+                    A responsive website optimized for
+                    mobile, tablet and desktop devices.
                 </p>
-
-                <div class="project-tags">
-                    <span class="tag">Responsive</span>
-                    <span class="tag">CSS</span>
-                    <span class="tag">Mobile</span>
-                </div>
 
                 <a
                     href="responsive.html"
                     class="project-link"
-                >
+                    target="_blank">
                     View Project →
                 </a>
 
             </div>
 
+        </div>
+
+
+        <!-- PROJECT 5 -->
+
+        <div class="project">
+
+            <div class="project-image">
+                🍽️
+            </div>
+
+            <div class="project-content">
+
+                <h3>
+                    Restaurant Website
+                </h3>
+
+                <p>
+                    A professional restaurant website with
+                    menu, contact information and WhatsApp.
+                </p>
+
+                <a
+                    href="restaurant.html"
+                    class="project-link"
+                    target="_blank">
+                    View Project →
+                </a>
+
+            </div>
 
         </div>
+
 
     </div>
 
@@ -1031,121 +774,84 @@
 
 <!-- CONTACT -->
 
-<section id="contact">
+<section class="contact" id="contact">
 
-    <div class="container">
+    <h2 class="section-title">
+        Contact Me
+    </h2>
 
-        <h2 class="section-title">
-            Let's Work Together
-        </h2>
 
-        <p class="section-subtitle">
-            Have a website idea? Send me a message and let's talk.
+    <div class="contact-info">
+
+        <p>
+            📞 Phone:
+            <a href="tel:+94712205560">
+                +94 71 220 5560
+            </a>
         </p>
 
+        <p>
+            📧 Email:
+            <a href="mailto:nadeezherarh@gmail.com">
+                nadeezherarh@gmail.com
+            </a>
+        </p>
 
-        <div class="contact-grid">
+        <div class="social-links">
 
+            <a
+                href="https://wa.me/94712205560"
+                target="_blank"
+                rel="noopener noreferrer">
+                💬 WhatsApp
+            </a>
 
-            <!-- CONTACT INFORMATION -->
-
-            <div class="contact-card">
-
-                <h3>
-                    Contact Information
-                </h3>
-
-                <br>
-
-                <p>
-                    📧
-                    <strong>Email</strong><br>
-                    <a href="mailto:nadeezherarh@gmail.com">
-                        nadeezherarh@gmail.com
-                    </a>
-                </p>
-
-
-                <p>
-                    📞
-                    <strong>Phone</strong><br>
-                    <a href="tel:+94712205560">
-                        +94 71 220 5560
-                    </a>
-                </p>
-
-
-                <div class="social-links">
-
-                    <a
-                        href="https://wa.me/94712205560"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        💬 WhatsApp
-                    </a>
-
-
-                    <a
-                        href="https://www.instagram.com/_im_nadeiz_/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        📸 Instagram
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- CONTACT FORM -->
-
-            <form
-                id="contact-form"
-                action="https://formspree.io/f/mbglaekv"
-                method="POST"
-            >
-
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    required
-                >
-
-
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Your Email"
-                    required
-                >
-
-
-                <textarea
-                    name="message"
-                    placeholder="Tell me about your project..."
-                    required
-                ></textarea>
-
-
-                <button
-                    type="submit"
-                    class="submit-btn"
-                >
-                    Send Message 🚀
-                </button>
-
-
-                <div id="form-message"></div>
-
-            </form>
-
+            <a
+                href="https://www.instagram.com/_im_nadeiz_/"
+                target="_blank"
+                rel="noopener noreferrer">
+                📸 Instagram
+            </a>
 
         </div>
 
     </div>
+
+
+    <!-- CONTACT FORM -->
+
+    <form
+        id="contact-form"
+        class="contact-form"
+        action="https://formspree.io/f/mbglaekv"
+        method="POST">
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required>
+
+        <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required>
+
+        <textarea
+            name="message"
+            placeholder="Your Message"
+            required></textarea>
+
+        <button
+            type="submit"
+            class="btn">
+            Send Message
+        </button>
+
+        <div id="form-message"></div>
+
+    </form>
 
 </section>
 
@@ -1165,66 +871,11 @@
 </footer>
 
 
-<!-- BACK TO TOP -->
-
-<button
-    id="topBtn"
-    onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
->
-    ↑
-</button>
-
+<!-- JAVASCRIPT -->
 
 <script>
 
-    /* MOBILE MENU */
-
-    function toggleMenu() {
-
-        const nav =
-            document.getElementById("navLinks");
-
-        nav.classList.toggle("active");
-
-    }
-
-
-    /* CLOSE MOBILE MENU AFTER CLICK */
-
-    document
-        .querySelectorAll(".nav-links a")
-        .forEach(function(link) {
-
-            link.addEventListener(
-                "click",
-                function() {
-
-                    document
-                        .getElementById("navLinks")
-                        .classList.remove("active");
-
-                }
-            );
-
-        });
-
-
-    /* DARK MODE */
-
-    function toggleTheme() {
-
-        document
-            .body
-            .classList
-            .toggle("dark");
-
-    }
-
-
-    /* CONTACT FORM */
-
-    const form =
-        document.getElementById("contact-form");
+    const form = document.getElementById("contact-form");
 
     const formMessage =
         document.getElementById("form-message");
@@ -1239,7 +890,6 @@
             formMessage.innerHTML =
                 "Sending...";
 
-
             try {
 
                 const response =
@@ -1247,10 +897,7 @@
                         form.action,
                         {
                             method: "POST",
-
-                            body:
-                                new FormData(form),
-
+                            body: new FormData(form),
                             headers: {
                                 "Accept":
                                     "application/json"
@@ -1273,9 +920,7 @@
 
                 }
 
-            }
-
-            catch (error) {
+            } catch (error) {
 
                 formMessage.innerHTML =
                     "❌ Something went wrong. Please try again.";
@@ -1285,34 +930,7 @@
         }
     );
 
-
-    /* BACK TO TOP */
-
-    const topBtn =
-        document.getElementById("topBtn");
-
-
-    window.addEventListener(
-        "scroll",
-        function() {
-
-            if (window.scrollY > 400) {
-
-                topBtn.style.display =
-                    "block";
-
-            } else {
-
-                topBtn.style.display =
-                    "none";
-
-            }
-
-        }
-    );
-
 </script>
-
 
 </body>
 </html>
